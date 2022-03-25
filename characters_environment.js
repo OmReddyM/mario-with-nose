@@ -21,7 +21,7 @@ var gameConfig={
   status: "start", 
   
   // initial lives of mario
-  initialLifes: 4,
+  initialLifes: 5,
 
   // character moves speed
   moveSpeed: 5,
@@ -53,8 +53,21 @@ var gameConfig={
 =            Game Status             =
 ====================================*/
 
-function game(){
+/*====================================
+=       Variables for game()         =
+====================================*/
 
+noseX = "";
+noseY = "";
+gameStatus = "";
+
+function startGame() {
+  gameStatus = "start";
+  document.getElementById("status").innerHTML = "Game is Loading";
+}
+
+function game(){
+  console.log("noseX = " + noseX +", noseY = " + noseY);
   instializeInDraw();
   moveEnvironment(mario);
   drawSprites();
